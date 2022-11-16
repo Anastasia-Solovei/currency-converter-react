@@ -1,0 +1,18 @@
+.Header {
+  min-height: 100px;
+  padding: 0 100px;
+  display: flex;
+  align-items: center;
+
+  background-color: #282c34;
+  color: white;
+}
+
+.AppHeading {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 700;
+}
