@@ -1,0 +1,15 @@
+.CurrencyItem {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.CurrencyItem:hover,
+.CurrencyItem:focus {
+  color: #24cca7;
+}
+
+.CurrencyElement {
+  margin-left: 5px;
+}
