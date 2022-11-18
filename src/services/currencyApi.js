@@ -1,10 +1,19 @@
-async function fetchCurrency() {
-  const response = await fetch(
-    'https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5',
-  );
-  const data = await response.json();
+import axios from 'axios';
 
-  return data;
+async function fetchCurrency() {
+  return axios
+    .get('https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5')
+    .then(response => {
+      if (response.status === 200 && response.data.length > 0) {
+        return response.data;
+      }
+
+      return Promise.reject(new Error('Oops nothing was found :('));
+    });
 }
 
-export default { fetchCurrency };
+const currencyApi = {
+  fetchCurrency,
+};
+
+export default currencyApi;
