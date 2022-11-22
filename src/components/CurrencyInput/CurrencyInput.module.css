@@ -1,0 +1,25 @@
+.GroupOverlay {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 35px;
+}
+
+.GroupOverlay:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.Input {
+  width: 50%;
+  border-radius: 5px;
+}
+
+.Select {
+  width: 30%;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.Option {
+  font-weight: 600;
+}

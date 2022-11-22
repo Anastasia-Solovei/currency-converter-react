@@ -1,0 +1,9 @@
+.CurrencyForm {
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px 20px;
+  width: 600px;
+  background-color: #282c34;
+  border-radius: 5px;
+}

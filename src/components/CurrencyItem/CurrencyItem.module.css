@@ -1,8 +1,11 @@
 .CurrencyItem {
-  margin-left: 30px;
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.CurrencyItem:not(:first-child) {
+  margin-left: 30px;
 }
 
 .CurrencyItem:hover,
