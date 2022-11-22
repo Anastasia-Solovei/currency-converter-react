@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { currencies } from '../../assets/constants';
+import { constantCurrencies } from '../../assets/constants';
+
 import currencyApi from '../../services/currencyApi';
 import CurrencyItem from '../CurrencyItem';
-
 import styles from './CurrencyRate.module.css';
 
 export default function CurrencyRate() {
@@ -13,7 +13,7 @@ export default function CurrencyRate() {
       const data = await currencyApi.fetchCurrency();
       const filtredCurrencies = [];
 
-      currencies.forEach(currency => {
+      constantCurrencies.forEach(currency => {
         data.forEach(element => {
           if (element.ccy === currency) {
             filtredCurrencies.push({
