@@ -7,8 +7,11 @@ import styles from './Header.module.css';
 export default function Header() {
   return (
     <header className={styles.Header}>
-      <Logo />
-      <h1 className={styles.AppHeading}>Currency Converter</h1>
+      <div className={styles.LogoOverlay}>
+        <Logo />
+        <h1 className={styles.AppHeading}>Currency Converter</h1>
+      </div>
+
       <CurrencyRate />
     </header>
   );
