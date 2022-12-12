@@ -45,7 +45,7 @@ export default function CurrencyRate() {
   return (
     <ul className={styles.CurrencyList}>
       {currency.map(({ ccy, buy, sale }) => {
-        return <CurrencyItem key={ccy} buy={buy} sale={sale} />;
+        return <CurrencyItem key={ccy} ccy={ccy} buy={buy} sale={sale} />;
       })}
     </ul>
   );
