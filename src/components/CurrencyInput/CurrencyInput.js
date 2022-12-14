@@ -15,7 +15,7 @@ export default function CurrencyInput({
         className={styles.Input}
         type="text"
         value={amount}
-        onChange={e => handleAmountChange(e.target.value)}
+        onChange={e => handleAmountChange(e.target.value.replace(/\D/g, ''))}
       ></input>
 
       <select
