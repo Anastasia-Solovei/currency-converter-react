@@ -34,18 +34,20 @@ export default function CurrencyConverter() {
     const ccy2 = currencies.find(currency => currency.ccy === currency2);
 
     if (ccy1 && currency2 === ccy1.base_ccy) {
-      resultAmount2 = (Number(amount1) * ccy1.buy).toString();
+      resultAmount2 = (Number(amount1) * ccy1.buy).toFixed(2).toString();
       setAmount2(resultAmount2);
       return;
     }
 
     if (ccy2 && currency1 === ccy2.base_ccy) {
-      resultAmount2 = (Number(amount1) / ccy2.sale).toString();
+      resultAmount2 = (Number(amount1) / ccy2.sale).toFixed(2).toString();
       setAmount2(resultAmount2);
       return;
     }
 
-    resultAmount2 = ((Number(amount1) * ccy1.buy) / ccy2.sale).toString();
+    resultAmount2 = ((Number(amount1) * ccy1.buy) / ccy2.sale)
+      .toFixed(2)
+      .toString();
     setAmount2(resultAmount2);
   }
 
@@ -90,18 +92,20 @@ export default function CurrencyConverter() {
     const ccy2 = currencies.find(currency => currency.ccy === currency2);
 
     if (ccy1 && currency2 === ccy1.base_ccy) {
-      resultAmount1 = (Number(amount2) / ccy1.buy).toString();
+      resultAmount1 = (Number(amount2) / ccy1.buy).toFixed(2).toString();
       setAmount1(resultAmount1);
       return;
     }
 
     if (ccy2 && currency1 === ccy2.base_ccy) {
-      resultAmount1 = (Number(amount2) * ccy2.sale).toString();
+      resultAmount1 = (Number(amount2) * ccy2.sale).toFixed(2).toString();
       setAmount1(resultAmount1);
       return;
     }
 
-    resultAmount1 = ((Number(amount2) * ccy2.sale) / ccy1.buy).toString();
+    resultAmount1 = ((Number(amount2) * ccy2.sale) / ccy1.buy)
+      .toFixed(2)
+      .toString();
     setAmount1(resultAmount1);
   }
 
