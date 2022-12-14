@@ -23,35 +23,115 @@ export default function CurrencyConverter() {
   }, []);
 
   function handleAmount1Change(amount1) {
-    const input = currencies.find(currency => currency.ccy === currency1);
-    const output = Number(amount1) * input.buy;
-
-    setAmount2(output.toString());
     setAmount1(amount1);
+    if (currency1 === currency2) {
+      setAmount2(amount1);
+      return;
+    }
+
+    let resultAmount2;
+    const ccy1 = currencies.find(currency => currency.ccy === currency1);
+    const ccy2 = currencies.find(currency => currency.ccy === currency2);
+
+    if (ccy1 && currency2 === ccy1.base_ccy) {
+      resultAmount2 = (Number(amount1) * ccy1.buy).toString();
+      setAmount2(resultAmount2);
+      return;
+    }
+
+    if (ccy2 && currency1 === ccy2.base_ccy) {
+      resultAmount2 = (Number(amount1) / ccy2.sale).toString();
+      setAmount2(resultAmount2);
+      return;
+    }
+
+    resultAmount2 = ((Number(amount1) * ccy1.buy) / ccy2.sale).toString();
+    setAmount2(resultAmount2);
   }
 
   function handleCurrency1Change(currency1) {
-    const input = currencies.find(currency => currency.ccy === currency1);
-    const output = Number(amount1) * input.buy;
-
-    setAmount2(output.toString());
     setCurrency1(currency1);
+    if (currency1 === currency2) {
+      setAmount2(amount1);
+      return;
+    }
+
+    let resultAmount2;
+    const ccy1 = currencies.find(currency => currency.ccy === currency1);
+    const ccy2 = currencies.find(currency => currency.ccy === currency2);
+
+    if (ccy1 && currency2 === ccy1.base_ccy) {
+      resultAmount2 = (Number(amount1) * ccy1.buy).toString();
+      setAmount2(resultAmount2);
+      return;
+    }
+
+    if (ccy2 && currency1 === ccy2.base_ccy) {
+      resultAmount2 = (Number(amount1) / ccy2.sale).toString();
+      setAmount2(resultAmount2);
+      return;
+    }
+
+    //  if (ccy1 && ccy2) {
+    resultAmount2 = ((Number(amount1) * ccy2.buy) / ccy1.sale).toString();
+    setAmount2(resultAmount2);
+    //}
   }
 
   function handleAmount2Change(amount2) {
-    const input = currencies.find(currency => currency.ccy === currency1);
-    const output = Number(amount2) / input.sale;
-
-    setAmount1(output.toString());
     setAmount2(amount2);
+    if (currency2 === currency1) {
+      setAmount1(amount2);
+      return;
+    }
+
+    let resultAmount1;
+    const ccy1 = currencies.find(currency => currency.ccy === currency1);
+    const ccy2 = currencies.find(currency => currency.ccy === currency2);
+
+    if (ccy1 && currency2 === ccy1.base_ccy) {
+      resultAmount1 = (Number(amount2) / ccy1.buy).toString();
+      setAmount1(resultAmount1);
+      return;
+    }
+
+    if (ccy2 && currency1 === ccy2.base_ccy) {
+      resultAmount1 = (Number(amount2) * ccy2.sale).toString();
+      setAmount1(resultAmount1);
+      return;
+    }
+
+    resultAmount1 = ((Number(amount2) * ccy2.sale) / ccy1.buy).toString();
+    setAmount1(resultAmount1);
   }
 
   function handleCurrency2Change(currency2) {
-    const input = currencies.find(currency => currency.ccy === currency1);
-    const output = Number(amount2) / input.sale;
-
-    setAmount1(output.toString());
     setCurrency2(currency2);
+    if (currency2 === currency1) {
+      setAmount2(amount1);
+      return;
+    }
+
+    let resultAmount2;
+    const ccy1 = currencies.find(currency => currency.ccy === currency1);
+    const ccy2 = currencies.find(currency => currency.ccy === currency2);
+
+    if (ccy1 && currency2 === ccy1.base_ccy) {
+      resultAmount2 = (Number(amount1) * ccy1.buy).toString();
+      setAmount2(resultAmount2);
+      return;
+    }
+
+    if (ccy2 && currency1 === ccy2.base_ccy) {
+      resultAmount2 = (Number(amount1) / ccy2.sale).toString();
+      setAmount2(resultAmount2);
+      return;
+    }
+
+    //if (ccy1 && ccy2) {
+    resultAmount2 = ((Number(amount1) * ccy1.buy) / ccy2.sale).toString();
+    setAmount2(resultAmount2);
+    // }
   }
 
   return (
