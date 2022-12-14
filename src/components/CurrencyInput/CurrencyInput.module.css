@@ -14,10 +14,21 @@
   border-radius: 5px;
 }
 
+.Input:hover,
+.Input:focus {
+  outline: 2px solid #1ca185;
+}
+
 .Select {
   width: 30%;
   border-radius: 5px;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.Select:hover,
+.Select:focus {
+  outline: 2px solid #1ca185;
 }
 
 .Option {

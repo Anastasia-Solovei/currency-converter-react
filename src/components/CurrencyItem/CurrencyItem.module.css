@@ -10,7 +10,11 @@
 
 .CurrencyItem:hover,
 .CurrencyItem:focus {
-  color: #24cca7;
+  color: #8be9d4;
+}
+
+.CurrencyIcon {
+  fill: currentColor;
 }
 
 .CurrencyElement {

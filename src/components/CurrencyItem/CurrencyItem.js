@@ -6,7 +6,7 @@ import styles from './CurrencyItem.module.css';
 export default function CurrencyItem({ ccy, buy, sale }) {
   return (
     <li className={styles.CurrencyItem}>
-      <svg width="20px" height="20px">
+      <svg width="20px" height="20px" className={styles.CurrencyIcon}>
         <use
           href={ccy === 'USD' ? sprite + '#icon-dollar' : sprite + '#icon-eur'}
         ></use>
