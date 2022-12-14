@@ -12,7 +12,6 @@
 
   background-color: #282c34;
   color: #fff;
-  fill: currentColor;
 }
 
 .Copyright {
@@ -24,6 +23,7 @@
 .CopyrightIcon,
 .ContactIcon {
   margin-right: 5px;
+  fill: currentColor;
 }
 
 .Contact {
