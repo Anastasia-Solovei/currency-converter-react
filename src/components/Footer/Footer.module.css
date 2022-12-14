@@ -1,0 +1,41 @@
+.Footer {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 200px;
+  display: flex;
+  align-items: center;
+
+  font-size: 12px;
+
+  background-color: #282c34;
+  color: #fff;
+  fill: currentColor;
+}
+
+.Copyright {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.CopyrightIcon,
+.ContactIcon {
+  margin-right: 5px;
+}
+
+.Contact {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+
+  color: #fff;
+  cursor: pointer;
+}
+
+.Contact:hover,
+.Contact:focus {
+  color: #8be9d4;
+}
